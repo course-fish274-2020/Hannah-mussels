@@ -42,7 +42,7 @@ abundance_data <- read.csv("data/change in pisaster and mussels PISCO sites.csv"
 
 
 ```{r, include=TRUE}
-knitr::kable(abundance_data)
+glimpse(abundance_data)
 ```
 
 

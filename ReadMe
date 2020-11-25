@@ -8,5 +8,8 @@ Documents: contains any text files
 
 Scripts: contains scripts mostly practice scripts done during lecture
 
-Markdown Files: contains any .Rdm files and any html documents produced form markdown
+Output: Any output files such as HTML files
+
+Due to complications with running .Rmd files while in their own folder all .Rmd files 
+are left out in project directory
 

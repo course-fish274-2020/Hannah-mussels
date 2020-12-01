@@ -34,7 +34,6 @@ Though not much is known about the causes of SSWS, the disease can be fatal to s
 ```{r, include = FALSE}
 library(dplyr)
 library(ggplot2)
-library(gridExtra)
 ```
 
 ```{r, include=FALSE}

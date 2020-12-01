@@ -53,7 +53,7 @@ as_tibble(abundance_data)
 The data set contains more data than needed to work with. In the following code, the mean percent cover of mussels pre SSWS and post SSWS is isolated. This makes it easier to manipulate and graph the data. 
 
 
-```{r, include = TRUE}
+```{r, echo=FALSE}
 mean_mussel_cover_data <- abundance_data %>% 
   select(c(Mean.percent_cover_Mytcal..pre.SSWS, Mean.percent_cover_Mytcal..post.SSWS)) %>%
   rename(pre_mean_mussel_cover = Mean.percent_cover_Mytcal..pre.SSWS, 
@@ -62,24 +62,22 @@ mean_mussel_cover_data <- abundance_data %>%
 as_tibble(mean_mussel_cover_data)
 ```
 
-```{r, include = TRUE}
+```{r, include = FALSE}
 pre_cover_data <- mean_mussel_cover_data %>%
   select(c(pre_mean_mussel_cover)) %>%
   rename(mean_percent_cover = pre_mean_mussel_cover)
 ```
 
-```{r, include = TRUE}
+```{r, include = FALSE}
 post_cover_data <- mean_mussel_cover_data %>%
   select(c(post_mean_mussel_cover)) %>%
   rename(mean_percent_cover = post_mean_mussel_cover)
 ```
 
-
-
 ## Histrogram comparing mussel abundance pre- and post-SSWS
 
-```{r, include = TRUE, message = FALSE}
-mean_cover_histogram <- rbind(pre_cover_data, post_cover_data)
+```{r, echo=FALSE, message=FALSE}
+mean_cover_histogram <-  rbind(pre_cover_data, post_cover_data)
 
 mean_cover_histogram<- ggplot(mean_cover_histogram) + 
   geom_histogram(data=pre_cover_data, aes(x=mean_percent_cover, fill = "Pre"), alpha = 0.5) +

@@ -2,14 +2,63 @@ This directory contains files and data for my mini project which looks into the 
 between mussel abundance and sea star abundance before and after the occurence of sea star
 wasting disease.
 
-Data: at the moment consists of the original data sets downloaded off figshare
+Project Directory:
 
-Documents: contains any text files
+  Data: at the moment consists of the original data sets downloaded off figshare
+      
+      - change in pisaster and mussels PISCO sites.csv : a dataset that contains changes in abundance of mussels and Pisaster
+      at various sites along the California coast
+      
+      - Copy of mussel_bed_limits.csv : a dataset that contains data on the size and limits of mussel beds
+      
+      - Copy of MusselSizeAll.csv : a dataset containing data on mussel body sizes
+      
+      - Copy of Spp_composition_all_years_stacked.csv : a data set containing the species composition of the sites along the 
+      California coast
 
-Scripts: contains scripts mostly practice scripts done during lecture
 
-Output: Any output files such as HTML files
+  Documents: contains any text files
+  
+      - ReadMe_mussels_markdown : a ReadMe file for the mussels markdown (not the presentation)
+      
 
-Due to complications with running .Rmd files while in their own folder all .Rmd files 
-are left out in project directory
+  Scripts: contains scripts mostly practice scripts done during 
+  
+      - reading_data.R : a script used for in-class practice before starting the project
+      
+
+  Output: Any output files such as HTML files 
+  
+      - mussels_markdown.html : the final product of the mussels markdown file
+      
+      - mussels_presentation.html : the final product (slide show) of the mussels presentation file
+      
+  
+  Markdown files: contain .Rmd files including the presentation file for this project
+  
+      - mussels_markdown.Rmd :  a Markdown file for the project includes code that manipulates the change in pisaster
+      and mussels PISCO sites.csv dataset and creates a histogram comparing pre and post mean mussel cover
+      
+      - mussels_presentation.Rmd : a Markdown file for the presentation of this project, is essentially a newer, working form
+      of mussels_markdown.Rmd, contains prose and code
+  
+  
+  Images: contains any pictures used for this project
+  
+  
+  
+  Plans for this Project:
+  
+  1) Create a better looking presentation with simplified code (put into pipes)
+  
+  2) A more in depth analysis of how sea star density compares to mean mussel cover before and after SSWS.
+  And possibly creating several graphs that reflect the potential relationship.
+  
+  3) Looking into how sea star mortality and its subsequential effect on mussel populations may affect 
+  species composition or the intertidal community in general ( this is more of a broad direction at the moment)
+  
+
+  
+  
+
 

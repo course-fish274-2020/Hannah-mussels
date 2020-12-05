@@ -37,7 +37,7 @@ library(ggplot2)
 ```
 
 ```{r, include=FALSE}
-abundance_data <- read.csv("data/change in pisaster and mussels PISCO sites.csv")
+abundance_data <- read.csv("../data/change in pisaster and mussels PISCO sites.csv")
 ```
 
 
@@ -72,6 +72,7 @@ post_cover_data <- mean_mussel_cover_data %>%
   select(c(post_mean_mussel_cover)) %>%
   rename(mean_percent_cover = post_mean_mussel_cover)
 ```
+
 
 ## Histrogram comparing mussel abundance pre- and post-SSWS
 

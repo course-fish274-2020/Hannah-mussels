@@ -1,6 +1,6 @@
 This directory contains files and data for my mini project which looks into the relationship
 between mussel abundance and sea star abundance before and after the occurence of sea star
-wasting disease.
+wasting syndrome (SSWS)
 
 Project Directory:
 
@@ -44,6 +44,10 @@ Project Directory:
   
   
   Images: contains any pictures used for this project
+  
+      - Pisaster Predate mussels.jpg : picture of sea stars feeding on bed of mussels
+      
+      - Seastar_white_lesions.jpg : picture of sea star with SSWS
   
   
   

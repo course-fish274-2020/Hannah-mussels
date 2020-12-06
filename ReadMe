@@ -4,7 +4,7 @@ wasting syndrome (SSWS)
 
 Project Directory:
 
-  Data: at the moment consists of the original data sets downloaded off figshare
+  - Data: at the moment consists of the original data sets downloaded off figshare
       
       - change in pisaster and mussels PISCO sites.csv : a dataset that contains changes in abundance of mussels and Pisaster
       at various sites along the California coast
@@ -15,26 +15,21 @@ Project Directory:
       
       - Copy of Spp_composition_all_years_stacked.csv : a data set containing the species composition of the sites along the 
       California coast
-
-
-  Documents: contains any text files
-  
-      - ReadMe_mussels_markdown : a ReadMe file for the mussels markdown (not the presentation)
       
 
-  Scripts: contains scripts mostly practice scripts done during 
+  - Scripts: contains scripts mostly practice scripts done during 
   
       - reading_data.R : a script used for in-class practice before starting the project
       
 
-  Output: Any output files such as HTML files 
+  - Output: Any output files such as HTML files 
   
       - mussels_markdown.html : the final product of the mussels markdown file
       
       - mussels_presentation.html : the final product (slide show) of the mussels presentation file
       
   
-  Markdown files: contain .Rmd files including the presentation file for this project
+  - Markdown files: contain .Rmd files including the presentation file for this project
   
       - mussels_markdown.Rmd :  a Markdown file for the project includes code that manipulates the change in pisaster
       and mussels PISCO sites.csv dataset and creates a histogram comparing pre and post mean mussel cover
@@ -43,13 +38,17 @@ Project Directory:
       of mussels_markdown.Rmd, contains prose and code
   
   
-  Images: contains any pictures used for this project
+  - Images: contains any pictures used for this project
   
       - Pisaster Predate mussels.jpg : picture of sea stars feeding on bed of mussels
       
       - Seastar_white_lesions.jpg : picture of sea star with SSWS
   
+  - .gitignore
   
+  - .Rhistory
+  
+  - ReadMe : contains information about directory and project in general
   
   Plans for this Project:
   

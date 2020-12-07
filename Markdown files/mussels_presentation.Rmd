@@ -6,14 +6,14 @@ output:
 
 ## The Data
 
-This data set consists of abundance data on the sea star "Pisaster ochraceus" and local mussels species in the rocky intertidal zones along California' coast. The data set primarily focuses on changes in abundance data for both animals before and after an occurence of Sea Star Wasting Syndrome (SSWS) causes mass sea star mortality. This mini project will only look into the mean percent cover of mussels pre-SSWS and post-SSWS.
+This project seeks to compare the abundance of sea star "Pisaster ochraceus" and local mussels species in California's rocky intertidal zones before and after an occurrence of Sea Star Wasting Syndrome (SSWS) causes mass sea star mortality. 
 
-The data sets used in this project were obtained from [Sea Star Wasting Syndrome impacts to intertidal communities via mass mortality of a keystone predator](https://figshare.com/articles/dataset/Data_for_Sea_Star_Wasting_Syndrome_impacts_to_intertidal_communities_via_mass_mortality_of_a_keystone_predator_/9795584)
+The data sets used are from [Sea Star Wasting Syndrome impacts to intertidal communities via mass mortality of a keystone predator](https://figshare.com/articles/dataset/Data_for_Sea_Star_Wasting_Syndrome_impacts_to_intertidal_communities_via_mass_mortality_of_a_keystone_predator_/9795584)
 
 
 ## The relationship between sea stars and mussels
 
-The sea star "Pisaster ochraceus" is a commonly known key stone predator for rocky intertidal communities. As a keystone predator these sea stars keep populations of competitively dominant species (mussels) in check. Some advantages of their role in intertidal communities include:
+The sea star "Pisaster ochraceus" is a key stone predator for intertidal communities. As a keystone predator these sea stars keep populations of competitively dominant species (mussels) in check. Some advantages of their role in intertidal communities include:
 
 - Reducing competition for space
 - Maintaining populations of producers (i.e kelp) and their consumers

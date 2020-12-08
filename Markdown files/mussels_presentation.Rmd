@@ -22,7 +22,7 @@ The sea star "Pisaster ochraceus" is a key stone predator for intertidal communi
 ![mussels](https://inverts.wallawalla.edu/Echinodermata/Class%20Asteroidea/Pisaster%20Predate%20mussels.jpg)
 
 
-## Sea Star Wastinging Syndrome (SSWS)
+## Sea Star Wasting Syndrome (SSWS)
 
 Though not much is known about the causes of SSWS, the disease can be fatal to sea stars and has been known to cause mass sea star mortality in rocky intertidal zones. The disease begins with lesions and eventually deterioration of the sea star's body, ending in death. The picture below shows a sea star with the disease. 
 
@@ -51,8 +51,8 @@ mussel_data <- abundance_data %>%
          Site = ï..site,
          Region = georegion) %>%
   pivot_longer(c('Pre', 'Post'),
-               names_to = "Relative Time",
-               values_to = "Mussel Mean Percent Cover")
+               names_to = "Relative_Time",
+               values_to = "Mussel_Cover")
 
 
  pisaster_data <- abundance_data %>%
@@ -65,8 +65,8 @@ mussel_data <- abundance_data %>%
          Site = ï..site,
          Region = georegion) %>%
   pivot_longer (c('Pre', 'Post'),
-                names_to = "Relative Time", 
-                values_to = "Pisaster Mean Density")
+                names_to = "Relative_Time", 
+                values_to = "Pisaster_Density")
 
 abundance_data2 <- merge(mussel_data, pisaster_data)
 abundance_tibble <- as_tibble(abundance_data2)
@@ -76,8 +76,54 @@ abundance_table <- head(abundance_tibble)
 
 ```{r, echo=FALSE}
 kable(abundance_table)
-
 ```
+
+
+```{r}
+ggplot(abundance_data2, aes(x = Mussel_Cover, y = Pisaster_Density)) +
+  geom_point()
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,7 +1,13 @@
 Project Purpose: This project is designed to compare the relationship between sea star and mussels abundance data before
 and after the occurence of Sea Star Wasting Syndrome (SSWS)
 
+Packages Required
 
+- dplyr
+-ggplot2
+-knitr
+-tidyr
+-gridExtra
 
 Project Directory:
 
@@ -64,6 +70,6 @@ Project Directory:
   
   1) Create a better looking presentation with simplified code (put into pipes) and easy to read tables
   
-  2) Create a graph that effectively and consicely compares mussel cover and sea star density before and after SSWS
+  2) Create a graph that effectively and concisely compares mussel cover and sea star density before and after SSWS
   
-  3) Potentially look into how species composition is affected as well
+  3) Look at how change in mussel percent cover varies between regions of West Coast

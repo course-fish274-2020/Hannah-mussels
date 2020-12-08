@@ -1,5 +1,5 @@
 Project Purpose: This project is designed to compare the relationship between sea star and mussels abundance data before
-and after the occurence of Sea Star Wasting Syndrome (SSWS)
+and after the occurrence of Sea Star Wasting Syndrome (SSWS)
 
 Packages Required
 

@@ -35,29 +35,50 @@ Though not much is known about the causes of SSWS, the disease can be fatal to s
 library(dplyr)
 library(ggplot2)
 library(knitr)
+library(tidyr)
 ```
 
 ```{r, include=FALSE}
 abundance_data <- read.csv("../data/change in pisaster and mussels PISCO sites.csv")
-abundance_data2 <- select(abundance_data,
-                          c(ï..site,
-                            georegion,
-                            Mean.percent_cover_Mytcal..pre.SSWS,
-                            Mean.percent_cover_Mytcal..post.SSWS,
-                            Mean.Pisaster.density..pre.SSWS,
-                            Mean.Pisaster.density..post.SSWS,))
+
+mussel_data <- abundance_data %>%
+  select(c(ï..site, 
+          georegion,
+          Mean.percent_cover_Mytcal..pre.SSWS,
+          Mean.percent_cover_Mytcal..post.SSWS)) %>%
+  rename(Pre = Mean.percent_cover_Mytcal..pre.SSWS,
+         Post = Mean.percent_cover_Mytcal..post.SSWS, 
+         Site = ï..site,
+         Region = georegion) %>%
+  pivot_longer(c('Pre', 'Post'),
+               names_to = "Relative Time",
+               values_to = "Mussel Mean Percent Cover")
+
+
+ pisaster_data <- abundance_data %>%
+   select(ï..site, 
+          georegion,
+          Mean.Pisaster.density..pre.SSWS,
+          Mean.Pisaster.density..post.SSWS) %>%
+  rename(Pre = Mean.Pisaster.density..pre.SSWS,
+         Post = Mean.Pisaster.density..post.SSWS,
+         Site = ï..site,
+         Region = georegion) %>%
+  pivot_longer (c('Pre', 'Post'),
+                names_to = "Relative Time", 
+                values_to = "Pisaster Mean Density")
+
+abundance_data2 <- merge(mussel_data, pisaster_data)
 abundance_tibble <- as_tibble(abundance_data2)
 abundance_table <- head(abundance_tibble)
-
 ```
 
 
 ```{r, echo=FALSE}
-kable(abundance_table, col.names = c('Site', 'Region', 'Mussel Mean % Cover (Pre)',
-      'Mussel Mean % Cover (Post)', 'Mean Pisaster Density (Pre)',
-      'Mean Pisaster Density (Post)'))
+kable(abundance_table)
 
 ```
+
 
 
 

@@ -15,7 +15,7 @@ library(gridExtra)
 Reading in the sea star and mussel data set
 
 ```{r, results=FALSE}
-abundance_data <- read.csv("data/change in pisaster and mussels PISCO sites.csv")
+abundance_data <- read.csv("../data/change in pisaster and mussels PISCO sites.csv")
 ```
 
 Viewing the entire dataset to get an idea about what it looks like

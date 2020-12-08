@@ -6,7 +6,7 @@ output:
 
 ## The Data
 
-This project seeks to compare the abundance of sea star "Pisaster ochraceus" and local mussels species in California's rocky intertidal zones before and after an occurrence of Sea Star Wasting Syndrome (SSWS) causes mass sea star mortality. 
+This project seeks to compare the abundance of sea star "Pisaster ochraceus" and local mussels species in Western US rocky intertidal zones before and after an occurrence of Sea Star Wasting Syndrome (SSWS) causes mass sea star mortality. 
 
 The data sets used are from [Sea Star Wasting Syndrome impacts to intertidal communities via mass mortality of a keystone predator](https://figshare.com/articles/dataset/Data_for_Sea_Star_Wasting_Syndrome_impacts_to_intertidal_communities_via_mass_mortality_of_a_keystone_predator_/9795584)
 
@@ -77,22 +77,35 @@ abundance_table <- head(abundance_tibble)
 
 
 ```{r, echo=FALSE}
-kable(abundance_table)
+kable(abundance_table, col.names = c('Site', 'Region', 'Time Relative to SSWS',
+                                     'Mussel Mean Percent Cover', 'Pisaster Mean Density'))
 ```
+## Comparing Pisaster density to Mussel percent cover
 
-
-```{r, message = FALSE}
+```{r, message = FALSE, warning = FALSE, echo = FALSE}
 ggplot(abundance_data2, aes(x = Mussel_Cover, y = Pisaster_Density, color = Relative_Time)) +
   geom_point() + scale_x_log10() + scale_y_log10() +
-  geom_smooth(method = "lm", se = FALSE) + labs(color = "Time Relative to SSWS") +
-  xlab("Mean Percent Cover of Mussels") + ylab("Mean Density of Pisaster")
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(color = "Time Relative to SSWS") +
+  xlab("Mean Percent Cover of Mussels") +
+  ylab("Mean Density of Pisaster")
   
 ```
 
 
 
-```{r}
-ggplot(abundance_data2, aes())
+
+
+## Change in Mussel Cover by Region
+
+```{r, echo = FALSE}
+ggplot(abundance_data2, aes(x = Mussel_Cover, fill = Relative_Time)) +
+  geom_histogram(bins = 10, position = "dodge") + xlab("Mean Percent Cover") +
+  labs(fill = "Time Relative to SSWS") + theme_bw() +
+  scale_fill_brewer(palette = "Paired") +
+  facet_wrap(~ Region)
+
+    
 ```
 
 
@@ -131,49 +144,4 @@ ggplot(abundance_data2, aes())
 
 
 
-
-
-
-
-
-## Isolating the data
-
-The data set contains more data than needed to work with. In the following code, the mean percent cover of mussels pre SSWS and post SSWS is isolated. This makes it easier to manipulate and graph the data. 
-
-
-```{r, echo=FALSE}
-mean_mussel_cover_data <- abundance_data %>% 
-  select(c(Mean.percent_cover_Mytcal..pre.SSWS, Mean.percent_cover_Mytcal..post.SSWS)) %>%
-  rename(pre_mean_mussel_cover = Mean.percent_cover_Mytcal..pre.SSWS, 
-         post_mean_mussel_cover = Mean.percent_cover_Mytcal..post.SSWS)
-
-as_tibble(mean_mussel_cover_data)
-```
-
-```{r, include = FALSE}
-pre_cover_data <- mean_mussel_cover_data %>%
-  select(c(pre_mean_mussel_cover)) %>%
-  rename(mean_percent_cover = pre_mean_mussel_cover)
-```
-
-```{r, include = FALSE}
-post_cover_data <- mean_mussel_cover_data %>%
-  select(c(post_mean_mussel_cover)) %>%
-  rename(mean_percent_cover = post_mean_mussel_cover)
-```
-
-
-## Histrogram comparing mussel abundance pre- and post-SSWS
-
-```{r, echo=FALSE, message=FALSE}
-mean_cover_histogram <-  rbind(pre_cover_data, post_cover_data)
-
-mean_cover_histogram<- ggplot(mean_cover_histogram) + 
-  geom_histogram(data=pre_cover_data, aes(x=mean_percent_cover, fill = "Pre"), alpha = 0.5) +
-  geom_histogram(data=post_cover_data, aes(x=mean_percent_cover, fill = "Post"), alpha = 0.5) + 
-  xlab("Mean Percent Cover") + 
-  scale_fill_manual("Type", values = c(Pre = "blue", Post = "green"))
-
-print(mean_cover_histogram)
-```
 

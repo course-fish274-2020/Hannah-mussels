@@ -6,25 +6,27 @@ output:
 
 ## The Data
 
-This project seeks to compare the abundance of sea star "Pisaster ochraceus" and local mussels species in Western US rocky intertidal zones before and after an occurrence of Sea Star Wasting Syndrome (SSWS) causes mass sea star mortality. 
+This project seeks to compare the abundance of sea star _Pisaster ochraceus_ and local mussels species in rocky intertidal zones across the US West coast. This project focuses on abundance data before and after a breakout of Sea Star Wasting Syndrome (SSWS).
 
-The data sets used are from [Sea Star Wasting Syndrome impacts to intertidal communities via mass mortality of a keystone predator](https://figshare.com/articles/dataset/Data_for_Sea_Star_Wasting_Syndrome_impacts_to_intertidal_communities_via_mass_mortality_of_a_keystone_predator_/9795584)
+Packages required : Tidyverse and Knitr
+
+The data set used is from [Sea Star Wasting Syndrome impacts to intertidal communities via mass mortality of a keystone predator](https://figshare.com/articles/dataset/Data_for_Sea_Star_Wasting_Syndrome_impacts_to_intertidal_communities_via_mass_mortality_of_a_keystone_predator_/9795584)
 
 
 ## The relationship between sea stars and mussels
 
-The sea star "Pisaster ochraceus" is a key stone predator for intertidal communities. As a keystone predator these sea stars keep populations of competitively dominant species (mussels) in check. Some advantages of their role in intertidal communities include:
+The sea star _Pisaster ochraceus_ is a key stone predator for intertidal communities. As a keystone predator these sea stars keep populations of competitively dominant species (mussels) in check. Some advantages of their role in intertidal communities include:
 
 - Reducing competition for space
-- Maintaining populations of producers (i.e kelp) and their consumers
-- Keeping biodiversity high
+- Protecting populations of producers (i.e kelp) and their consumers
+- Maintaining biodiversity
 
 ![mussels](https://inverts.wallawalla.edu/Echinodermata/Class%20Asteroidea/Pisaster%20Predate%20mussels.jpg)
 
 
 ## Sea Star Wasting Syndrome (SSWS)
 
-Though not much is known about the causes of SSWS, the disease can be fatal to sea stars and has been known to cause mass sea star mortality in rocky intertidal zones. The disease begins with lesions and eventually deterioration of the sea star's body, ending in death. The picture below shows a sea star with the disease. 
+Though not much is known about the causes of SSWS, the disease can be fatal to sea stars and has been known to cause mass mortality. The disease begins with lesions and eventually deterioration of the sea star's body, ending in death.
 
 ![SSWS](https://www.fondriest.com/news/wp-content/uploads/2018/04/Seastar_white_lesions.jpg)
 
@@ -36,7 +38,6 @@ library(dplyr)
 library(ggplot2)
 library(knitr)
 library(tidyr)
-library(gridExtra)
 ```
 
 ```{r, include=FALSE}
@@ -80,7 +81,7 @@ abundance_table <- head(abundance_tibble)
 kable(abundance_table, col.names = c('Site', 'Region', 'Time Relative to SSWS',
                                      'Mussel Mean Percent Cover', 'Pisaster Mean Density'))
 ```
-## Comparing Pisaster density to Mussel percent cover
+## Comparing _Pisaster_ density to Mussel percent cover
 
 ```{r, message = FALSE, warning = FALSE, echo = FALSE}
 ggplot(abundance_data2, aes(x = Mussel_Cover, y = Pisaster_Density, color = Relative_Time)) +
@@ -110,10 +111,12 @@ ggplot(abundance_data2, aes(x = Mussel_Cover, fill = Relative_Time)) +
 
 
 
+## Conclusion
 
-
-
-
+- After the occurrence of Sea Star Wasting Disease, average _Pisaster_ density decreased while average Mussel percent cover increased.
+- This is most likely the result of _Pisaster's_ role as a keystone predator, without them mussels are left to out compete other species for space
+- Some regions ,such as Southern California, saw a decrease in mussel cover post SSWS. This could be the results of regional environmental or biological factors.
+- More research should be done to study the effect of SSWS on both _Pisaster_ and other members of the rocky intertidal community.
 
 
 

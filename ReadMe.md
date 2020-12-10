@@ -2,12 +2,13 @@ Project Purpose: This project is designed to compare the relationship between se
 and after the occurrence of Sea Star Wasting Syndrome (SSWS)
 
 Packages Required
-
+ 
+(Tidyverse)
 - dplyr
 -ggplot2
 -knitr
 -tidyr
--gridExtra
+
 
 Project Directory:
 
@@ -39,13 +40,13 @@ Project Directory:
       
       
   
-  - Markdown files: contain .Rmd files including the presentation file for this project
+  - Markdown files: contain .Rmd files
   
       - mussels_markdown.Rmd :  a Markdown file for the project includes code that manipulates the change in pisaster
       and mussels PISCO sites.csv dataset and creates a histogram comparing pre and post mean mussel cover
       
       - mussels_presentation.Rmd : a Markdown file for the presentation of this project, is essentially a newer, working form
-      of mussels_markdown.Rmd, contains prose and code
+      of mussels_markdown.Rmd, contains prose and code 
       
 
  -  Images: contains any pictures used for this project

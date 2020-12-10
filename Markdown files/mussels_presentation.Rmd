@@ -38,6 +38,7 @@ library(dplyr)
 library(ggplot2)
 library(knitr)
 library(tidyr)
+library(kableExtra)
 ```
 
 ```{r, include=FALSE}
@@ -71,15 +72,17 @@ mussel_data <- abundance_data %>%
                 values_to = "Pisaster_Density")
 
 abundance_data2 <- merge(mussel_data, pisaster_data)
-View(abundance_data2)
 abundance_tibble <- as_tibble(abundance_data2)
 abundance_table <- head(abundance_tibble)
 ```
 
 
 ```{r, echo=FALSE}
-kable(abundance_table, col.names = c('Site', 'Region', 'Time Relative to SSWS',
-                                     'Mussel Mean Percent Cover', 'Pisaster Mean Density'))
+abundance_table %>%
+  kable(col.names = c('Site', 'Region', 'Time Relative to SSWS',
+                      'Mussel Mean Percent Cover', 'Pisaster Mean Density'),
+                      align = "lccrr") %>%
+  kable_paper()
 ```
 ## Comparing _Pisaster_ density to Mussel percent cover
 
@@ -87,9 +90,9 @@ kable(abundance_table, col.names = c('Site', 'Region', 'Time Relative to SSWS',
 ggplot(abundance_data2, aes(x = Mussel_Cover, y = Pisaster_Density, color = Relative_Time)) +
   geom_point() + scale_x_log10() + scale_y_log10() +
   geom_smooth(method = "lm", se = FALSE) +
-  labs(color = "Time Relative to SSWS") +
-  xlab("Mean Percent Cover of Mussels") +
-  ylab("Mean Density of Pisaster")
+  labs(color = "Time Relative to SSWS", x = "Mean Percent Cover of Mussels", y = "Mean Density of Pisaster") +
+  scale_color_manual(values = c("dark blue", "light blue")) +
+  theme_gray()
   
 ```
 
@@ -102,9 +105,8 @@ ggplot(abundance_data2, aes(x = Mussel_Cover, y = Pisaster_Density, color = Rela
 ```{r, echo = FALSE}
 ggplot(abundance_data2, aes(x = Mussel_Cover, fill = Relative_Time)) +
   geom_histogram(bins = 10, position = "dodge") + xlab("Mean Percent Cover") +
-  labs(fill = "Time Relative to SSWS") + theme_bw() +
-  scale_fill_brewer(palette = "Paired") +
-  facet_wrap(~ Region)
+  labs(fill = "Time Relative to SSWS") + theme_gray () +
+  scale_fill_manual(values = c("dark blue", "light blue")) + facet_wrap(~ Region)
 
     
 ```
@@ -113,9 +115,10 @@ ggplot(abundance_data2, aes(x = Mussel_Cover, fill = Relative_Time)) +
 
 ## Conclusion
 
-- After the occurrence of Sea Star Wasting Disease, average _Pisaster_ density decreased while average Mussel percent cover increased.
-- This is most likely the result of _Pisaster's_ role as a keystone predator, without them mussels are left to out compete other species for space
+- After the occurrence of Sea Star Wasting Disease, average _Pisaster_ density decreased while average Mussel percent cover increased. This is most likely the result of _Pisaster's_ role as a keystone predator, without them mussels are left to out compete other species for space
+
 - Some regions ,such as Southern California, saw a decrease in mussel cover post SSWS. This could be the results of regional environmental or biological factors.
+
 - More research should be done to study the effect of SSWS on both _Pisaster_ and other members of the rocky intertidal community.
 
 

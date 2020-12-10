@@ -8,6 +8,7 @@ Packages Required
 -ggplot2
 -knitr
 -tidyr
+-kableExtra
 
 
 Project Directory:

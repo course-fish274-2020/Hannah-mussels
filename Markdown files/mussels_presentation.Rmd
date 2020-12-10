@@ -34,8 +34,6 @@ Though not much is known about the causes of SSWS, the disease can be fatal to s
 
 ![SSWS](https://www.fondriest.com/news/wp-content/uploads/2018/04/Seastar_white_lesions.jpg)
 
-
-
 ## Reading in and Viewing the Data
 ```{r, include = FALSE}
 library(dplyr)
@@ -44,6 +42,7 @@ library(knitr)
 library(tidyr)
 library(kableExtra)
 ```
+
 
 ```{r, include=FALSE}
 abundance_data <- read.csv("../data/change in pisaster and mussels PISCO sites.csv")
@@ -88,6 +87,7 @@ abundance_table %>%
                       align = "lccrr") %>%
   kable_paper()
 ```
+
 ## Comparing _Pisaster_ density to Mussel percent cover
 
 ```{r, message = FALSE, warning = FALSE, echo = FALSE}
@@ -101,9 +101,6 @@ ggplot(abundance_data2, aes(x = Mussel_Cover, y = Pisaster_Density, color = Rela
 ```
 
 
-
-
-
 ## Change in Mussel Cover by Region
 
 ```{r, echo = FALSE}
@@ -114,7 +111,6 @@ ggplot(abundance_data2, aes(x = Mussel_Cover, fill = Relative_Time)) +
 
     
 ```
-
 
 
 ## Conclusion
